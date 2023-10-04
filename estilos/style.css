@@ -1,0 +1,79 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: gray;
+    background-image: linear-gradient(180deg, #00db6a, #ccc);
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 350px;
+    background-color: white;
+    padding: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+#header {
+    background-color: #eee;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 30px;
+}
+
+#header > h1 {
+    padding: 15px;
+}
+
+#login > input {
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    display: block;
+}
+
+small {
+    margin-bottom: 20px;
+    display: block;
+    color: #db0000;
+}
+
+#outros {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#outros > input {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.errado {
+    border: 2px solid #db0000;
+}
+
+.certo {
+    border: 2px solid #00db6a;
+}
