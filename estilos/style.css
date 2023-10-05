@@ -12,7 +12,11 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: gray;
-    background-image: linear-gradient(180deg, #00db6a, #ccc);
+    background-image: linear-gradient(180deg, #00db6a, rgb(25, 25, 25));
+}
+
+.form {
+    position: relative;
 }
 
 main {
@@ -40,7 +44,7 @@ label {
     padding: 15px;
 }
 
-#login > input {
+input {
     border-radius: 10px;
     border: 2px solid #e0e0e0;
     font-size: 14px;
@@ -50,9 +54,25 @@ label {
 }
 
 small {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: block;
     color: #db0000;
+    visibility: hidden;
+}
+
+span {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+span.erro {
+    color: #db0000;
+}
+
+span.certo {
+    color: #00db6a;
 }
 
 #outros {
@@ -68,12 +88,25 @@ small {
     background-color: lightseagreen;
     border-radius: 10px;
     font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.errado {
+#outros a {
+    text-decoration: none;
+    color: gray;
+}
+
+#outros a:hover {
+    text-decoration: underline;
+    color: rgb(44,44,44);
+    font-weight: 500;
+}
+
+.errado > input {
     border: 2px solid #db0000;
 }
 
-.certo {
+.certo > input {
     border: 2px solid #00db6a;
 }
