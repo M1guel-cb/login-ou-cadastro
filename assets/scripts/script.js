@@ -2,8 +2,8 @@ var email = document.querySelector('#email');
 var senha = document.querySelector('#senha');
 var divEmail = document.querySelector('#d-email');
 var divSenha = document.querySelector('#d-senha');
-var erroEmail = document.querySelector('#e-erro');
-var erroSenha = document.querySelector('#s-erro');
+var erroEmail = document.querySelector('small#e-erro');
+var erroSenha = document.querySelector('small#s-erro');
 
 function bora() {
     if (email == '') {
@@ -17,9 +17,9 @@ function bora() {
 function erro(msg, loc) {
     if (loc == 'email') {
         erroEmail = msg;
-        email.classList.toggle('erro');
+        email.classList.toggle('errado');
     } else if (loc == 'senha') {
         erroSenha.innerHTML = msg;
-        senha.classList.toggle('erro');
+        senha.classList.toggle('errado');
     }
 }
