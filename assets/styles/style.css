@@ -188,6 +188,11 @@ input[type='submit']:hover {
     border: 4px solid var(--dark-50);
 }
 
+input::placeholder {
+    transition: all .2s linear;
+    color: var(--dark-50);
+}
+
 #esqueci-senha:hover {
     text-decoration: underline;
     transform: scale(1);
