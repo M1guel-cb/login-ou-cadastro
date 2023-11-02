@@ -20,22 +20,22 @@
                 </label>
             </header>
             <main>
-                <div id="conteiner-login">
+                <div id="container-login">
                     <label for="login">Login</label>
                     <div id="div-login">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" id="login">
                     </div>
                 </div>
-                <div id="conatiner-senha">
+                <div id="container-senha">
                     <label for="senha">Senha</label>
                     <div id="div-senha">
                         <i class="fa-solid fa-key"></i>
                         <input type="password" id="senha">
-                        <i class="fa-solid fa-eye-slash" id="olho-fechado"></i>
-                        <i class="fa-solid fa-eye" id="olho-aberto"></i>
+                        <i class="fa-solid fa-eye-slash" id="olho-fechado" onclick="verSenha('text')"></i>
+                        <i class="fa-solid fa-eye" id="olho-aberto" onclick="verSenha('password')"></i>
                     </div>
-                    <a href="#">Esqueci a senha</a>
+                    <a href="#" id="esqueci-senha">Esqueci a senha</a>
                 </div>
                 <input type="submit" value="Entrar">
             </main>

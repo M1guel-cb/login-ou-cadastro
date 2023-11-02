@@ -113,18 +113,18 @@ main {
 }
 
 #div-login, #div-senha {
-    border-bottom: 2px solid var(--dark-100);
+    border-bottom: 2px solid var(--dark-50);
     height: 45px;
     transition: color .2s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--dark-100);
+    color: var(--dark-50);
 }
 
 main label {
     transition: color .2s ease-in-out;
-    color: var(--dark-100);
+    color: var(--dark-50);
 }
 
 #div-login > i, #div-senha > i {
@@ -137,7 +137,7 @@ main label {
 }
 
 #div-senha > input {
-    width: 260px;
+    width: 265px;
 }
 
 #div-login > input {
@@ -152,7 +152,7 @@ input {
     transition: all .15s ease-in-out;
     border: none;
     background-color: var(--bck);
-    color: var(--dark-100);
+    color: var(--dark-50);
 }
 
 i.fa-eye {
@@ -160,9 +160,12 @@ i.fa-eye {
 }
 
 #div-senha > i.fa-eye, #div-senha > i.fa-eye-slash {
+    transition: all .2s linear;
     font-size: 20px;
     cursor: pointer;
-    color: var(--dark-100);
+    color: var(--dark-50);
+    text-align: center;
+    width: 25px;
 }
 
 input[type='submit'] {
@@ -174,15 +177,26 @@ input[type='submit'] {
     font-weight: 600;
     font-size: larger;
     margin-top: 10px;
-    border: 4px solid var(--light-100)
+    border: 4px solid transparent;
 }
 
 input[type='submit']:hover {
     transition: all .2s linear;
     background-color: transparent;
     cursor: pointer;
-    color: var(--dark-100);
-    border: 4px solid var(--dark-100);
+    color: var(--dark-50);
+    border: 4px solid var(--dark-50);
+}
+
+#esqueci-senha:hover {
+    text-decoration: underline;
+    transform: scale(1);
+}
+
+#container-senha, #container-login {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 footer {
@@ -199,9 +213,9 @@ footer div {
 }
 
 a {
-    transition: transform .2s linear;
     text-decoration: none;
     color: var(--dark-50);
+    transition: all .2s linear;
 }
 
 a:hover {
