@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     width: 400px;
     border-radius: 15px;
     padding: 20px;
@@ -62,7 +62,7 @@ body {
     background-color: #000;
     color: #fff;
     border-radius: 50px;
-    width: 166px;
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,15 +109,16 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 #div-login, #div-senha {
+    border-bottom: 2px solid var(--dark-100);
+    height: 45px;
     transition: color .2s ease-in-out;
     display: flex;
-    align-items: end;
-    justify-content: center;
-    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
     color: var(--dark-100);
 }
 
@@ -127,25 +128,61 @@ main label {
 }
 
 #div-login > i, #div-senha > i {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 #div-login > input, #div-senha > input {
     height: 35px;
+    font-size: 16px;
+}
+
+#div-senha > input {
+    width: 260px;
+}
+
+#div-login > input {
+    width: 308px;
+}
+
+#div-login > input:focus, #div-senha > input:focus {
+    outline: none;
 }
 
 input {
     transition: all .15s ease-in-out;
     border: none;
-    border-bottom: 2px solid var(--dark-100);
-    width: 300px;
     background-color: var(--bck);
     color: var(--dark-100);
-    padding: 0 10px;
 }
 
-input:focus {
-    border: none;
+i.fa-eye {
+    display: none;
+}
+
+#div-senha > i.fa-eye, #div-senha > i.fa-eye-slash {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--dark-100);
+}
+
+input[type='submit'] {
+    background-color: var(--dark-50);
+    color: var(--light-100);
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: larger;
+    margin-top: 10px;
+    border: 4px solid var(--light-100)
+}
+
+input[type='submit']:hover {
+    transition: all .2s linear;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--dark-100);
+    border: 4px solid var(--dark-100);
 }
 
 footer {
