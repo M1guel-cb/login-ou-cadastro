@@ -13,7 +13,7 @@ let erro = "";
 var minusc = /[a-z]/; 
 let maiusc = /[A-Z]/;
 let num = /[0-9]/;
-let carc = /[!|@|#|$|%|^|&|*|(|)|-|_|.|;]/;
+let carc = /[!|@|#|$|%|^|&|*|(|)|-|_|.|]/;
 
 enviar.addEventListener('click', (e) => {
     e.preventDefault();
@@ -69,22 +69,23 @@ function validarSenha() {
     if (senha.value.length < 8) {
         erro = 'A senha deve conter pelo menos 8 caracteres!';
         return false
-    }
-    else if (minusc.test(senha.value) == false) {
+    } else if (minusc.test(senha.value) == false) {
         erro = 'Sua senha deve conter letras minúsculas!';
         return false
-    }
-    else if (num.test(senha.value) == false) {
+    } else if (maiusc.test(senha.value) == false) {
+        erro = 'Sua senha deve conter letras maiúsculas!';
+        return false
+    } else if (num.test(senha.value) == false) {
         erro = 'Sua senha deve conter números!';
         return false
-    } 
-    else if (carc.test(senha.value) == false) {
+    } else if (carc.test(senha.value) == false) {
         erro = 'Sua senha deve conter caracteres especiais!';
         return false
     } else {
         erro = '';
         return true
     }
+
 }
 
 temaAtual(tema_sitema)
