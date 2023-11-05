@@ -125,6 +125,7 @@ main {
 main label {
     transition: color .2s ease-in-out;
     color: var(--dark-50);
+    cursor: pointer;
 }
 
 #div-login > i, #div-senha > i {
