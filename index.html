@@ -19,20 +19,20 @@
                     <i class="fa-solid fa-moon"></i>
                 </label>
             </header>
-            <form method="get" autocomplete="off">
+            <form method="get">
                 <div id="container-email">
                     <label for="email">Email</label>
                     <div id="div-email">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="text" id="email" placeholder="Digite seu email de login">
+                        <input type="text" id="email" placeholder="Digite seu email de login" autocomplete="email">
                     </div>
-                    <div class="msg-erro"><i class="fa-solid fa-circle-exclamation"></i> <small>erro</small></div>
+                    <div class="msg-erro"><i class="fa-solid fa-circle-exclamation"></i> <small>Email inválido!</small></div>
                 </div>
                 <div id="container-senha">
                     <label for="senha">Senha</label>
                     <div id="div-senha">
                         <i class="fa-solid fa-key"></i>
-                        <input type="password" id="senha" placeholder="Digite sua senha">
+                        <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
                         <i class="fa-solid fa-eye-slash" id="olho-fechado" onclick="verSenha('text')"></i>
                         <i class="fa-solid fa-eye" id="olho-aberto" onclick="verSenha('password')"></i>
                     </div>

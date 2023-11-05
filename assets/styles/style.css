@@ -16,6 +16,9 @@
     --dark-100: #0a0a0a;
 
     --bck-umbrella: transparent;
+
+    --red-100: rgb(245, 0, 0);
+    --red-50: rgb(255, 65, 65);
 }
 
 [data-theme = 'dark'] {
@@ -26,6 +29,9 @@
     --dark-100: #cecece;
 
     --bck-umbrella: #fafafa;
+
+    --red-100:rgb(255, 65, 65);
+    --red-50: rgb(245, 0, 0);
 }
 
 body {
@@ -138,7 +144,7 @@ form label {
 }
 
 #div-senha > input {
-    width: 265px;
+    width: 262px;
 }
 
 #div-email > input {
@@ -210,15 +216,15 @@ input::placeholder {
 .erro > div#div-senha > i.fa-key,
 .erro > div#div-senha > i.fa-eye,
 .erro > div#div-senha > i.fa-eye-slash {
-    color: red;
+    color: var(--red-100);
 }
 
 div.erro > div#div-email, div.erro > div#div-senha {
-    border-color: red;
+    border-color: var(--red-100);
 }
 
 .erro > div > input::placeholder {
-    color: red;
+    color: var(--red-100);
 }
 
 div.msg-erro {
@@ -230,7 +236,7 @@ div.erro > div.msg-erro {
     align-items: center;
     gap: 5px;
     font-size: 17px;
-    color: red;
+    color: var(--red-100);
 }
 
 small {
