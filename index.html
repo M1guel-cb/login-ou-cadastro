@@ -19,13 +19,14 @@
                     <i class="fa-solid fa-moon"></i>
                 </label>
             </header>
-            <main>
-                <div id="container-login">
-                    <label for="login">Login</label>
-                    <div id="div-login">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" id="login" placeholder="Digite seu login (email ou telefone)" autocomplete="none">
+            <form method="get" autocomplete="off">
+                <div id="container-email">
+                    <label for="email">Email</label>
+                    <div id="div-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="text" id="email" placeholder="Digite seu email de login">
                     </div>
+                    <div class="msg-erro"><i class="fa-solid fa-circle-exclamation"></i> <small>erro</small></div>
                 </div>
                 <div id="container-senha">
                     <label for="senha">Senha</label>
@@ -35,10 +36,11 @@
                         <i class="fa-solid fa-eye-slash" id="olho-fechado" onclick="verSenha('text')"></i>
                         <i class="fa-solid fa-eye" id="olho-aberto" onclick="verSenha('password')"></i>
                     </div>
+                    <div class="msg-erro"><i class="fa-solid fa-circle-exclamation"></i> <small>erro</small></div>
                     <a href="#" id="esqueci-senha">Esqueci a senha</a>
                 </div>
-                <input type="submit" value="Entrar">
-            </main>
+                <input type="submit" value="Entrar" onclick="validar()">
+            </form method="get">
             <footer>
                 <a href="https://www.instagram.com/m1guel.cb" rel="external" target="_blank">
                     <div>

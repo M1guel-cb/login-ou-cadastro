@@ -105,14 +105,14 @@ input#light-dark {
     color: rgb(1, 173, 207);
 }
 
-main {
+form {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-#div-login, #div-senha {
+#div-email, #div-senha {
     border-bottom: 2px solid var(--dark-50);
     height: 45px;
     transition: color .2s ease-in-out;
@@ -122,17 +122,17 @@ main {
     color: var(--dark-50);
 }
 
-main label {
+form label {
     transition: color .2s ease-in-out;
     color: var(--dark-50);
     cursor: pointer;
 }
 
-#div-login > i, #div-senha > i {
+#div-email > i, #div-senha > i {
     font-size: 30px;
 }
 
-#div-login > input, #div-senha > input {
+#div-email > input, #div-senha > input {
     height: 35px;
     font-size: 16px;
 }
@@ -141,11 +141,11 @@ main label {
     width: 265px;
 }
 
-#div-login > input {
+#div-email > input {
     width: 308px;
 }
 
-#div-login > input:focus, #div-senha > input:focus {
+#div-email > input:focus, #div-senha > input:focus {
     outline: none;
 }
 
@@ -199,10 +199,42 @@ input::placeholder {
     transform: scale(1);
 }
 
-#container-senha, #container-login {
+#container-senha, #container-email {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.erro > div > input,
+.erro > div#div-email > i.fa-envelope,
+.erro > div#div-senha > i.fa-key,
+.erro > div#div-senha > i.fa-eye,
+.erro > div#div-senha > i.fa-eye-slash {
+    color: red;
+}
+
+div.erro > div#div-email, div.erro > div#div-senha {
+    border-color: red;
+}
+
+.erro > div > input::placeholder {
+    color: red;
+}
+
+div.msg-erro {
+    display: none;
+}
+
+div.erro > div.msg-erro {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 17px;
+    color: red;
+}
+
+small {
+    transform: translateY(-2px);
 }
 
 footer {
