@@ -79,6 +79,9 @@ function validarSenha() {
     } else if (carc.test(senha.value) == false) {
         erro = 'Sua senha deve conter caracteres especiais!';
         return false
+    } else if (senha.value.length > 20) {
+        erro = 'Sua senha só pode conter até 20 caracteres!';
+        return false
     } else {
         erro = '';
         return true
