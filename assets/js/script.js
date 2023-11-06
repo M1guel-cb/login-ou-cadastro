@@ -1,10 +1,13 @@
 const btn = document.querySelector('#btn');
 const bola = document.querySelector('#bola');
-const olho = document.querySelector('#olho-aberto');
-const olhoFechado = document.querySelector('#olho-fechado');
+const olhoSenha = document.querySelector('div#div-senha #olho-aberto');
+const olhoFechadoSenha = document.querySelector('div#div-senha #olho-fechado');
+const olhoConfirmacaoSenha = document.querySelector('div#div-confirmacao-senha #olho-aberto');
+const olhoFechadoConfirmacaoSenha = document.querySelector('div#div-confirmacao-senha #olho-fechado');
 const enviar = document.querySelector('input[type = "submit"]');
 const email = document.querySelector("#email");
 const senha = document.querySelector('#senha');
+const confirmarSenha = document.querySelector('#confirmacao-senha');
 const erroSenha = document.querySelector('#container-senha > div.msg-erro > small');
 const contEmail = document.querySelector("#container-email");
 const contSenha = document.querySelector("#container-senha");
@@ -13,24 +16,7 @@ let erro = "";
 var minusc = /[a-z]/; 
 let maiusc = /[A-Z]/;
 let num = /[0-9]/;
-let carc = /[!|@|#|$|%|^|&|*|(|)|-|_|.|]/;
-
-enviar.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    if (validarEmail() == false) {
-        contEmail.classList.add('erro');
-    } else {
-        contEmail.classList.remove('erro')
-    }
-
-    if (validarSenha() == false) {
-        erroSenha.innerHTML = erro;
-        contSenha.classList.add('erro');
-    } else {
-        contSenha.classList.remove('erro')
-    }
-});
+let carc = /[!|@|#|$|%|^|&|*|(|)|-|_|.]/;
 
 btn.addEventListener('click', () => {
     let oldTema = localStorage.getItem('theme') || 'light';
@@ -41,13 +27,25 @@ btn.addEventListener('click', () => {
 
 function verSenha(tipo) {
     if (tipo == 'text') {
-        olho.style.display = 'block';
-        olhoFechado.style.display = 'none';
+        olhoSenha.style.display = 'block';
+        olhoFechadoSenha.style.display = 'none';
         senha.type = tipo
     } else if (tipo == 'password') {
-        olho.style.display = 'none';
-        olhoFechado.style.display = 'block';
+        olhoSenha.style.display = 'none';
+        olhoFechadoSenha.style.display = 'block';
         senha.type = tipo
+    }
+}
+
+function verConfirmacaoSenha(tipo) {
+    if (tipo == 'text') {
+        olhoConfirmacaoSenha.style.display = 'block';
+        olhoFechadoConfirmacaoSenha.style.display = 'none';
+        confirmarSenha.type = tipo
+    } else if (tipo == 'password') {
+        olhoConfirmacaoSenha.style.display = 'none';
+        olhoFechadoConfirmacaoSenha.style.display = 'block';
+        confirmarSenha.type = tipo
     }
 }
 
@@ -85,7 +83,24 @@ function validarSenha() {
         erro = '';
         return true
     }
-
+    
 }
 
 temaAtual(tema_sitema)
+
+enviar.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (validarEmail() == false) {
+        contEmail.classList.add('erro');
+    } else {
+        contEmail.classList.remove('erro')
+    }
+
+    if (validarSenha() == false) {
+        erroSenha.innerHTML = erro;
+        contSenha.classList.add('erro');
+    } else {
+        contSenha.classList.remove('erro')
+    }
+});

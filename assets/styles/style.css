@@ -118,7 +118,10 @@ form {
     gap: 15px;
 }
 
-#div-email, #div-senha {
+#div-email,
+#div-senha,
+#div-confirmacao-senha,
+#div-nome {
     border-bottom: 2px solid var(--dark-50);
     height: 45px;
     transition: color .2s ease-in-out;
@@ -134,24 +137,35 @@ form label {
     cursor: pointer;
 }
 
-#div-email > i, #div-senha > i {
+#div-email > i,
+#div-senha > i,
+#div-nome > i,
+#div-confirmacao-senha > i {
     font-size: 30px;
 }
 
-#div-email > input, #div-senha > input {
+#div-email > input,
+#div-senha > input,
+#div-nome > input,
+#div-confirmacao-senha > input  {
     height: 35px;
     font-size: 16px;
 }
 
-#div-senha > input {
+#div-senha > input,
+#div-confirmacao-senha > input {
     width: 262px;
 }
 
-#div-email > input {
+#div-email > input,
+#div-nome > input {
     width: 308px;
 }
 
-#div-email > input:focus, #div-senha > input:focus {
+#div-email > input:focus,
+#div-senha > input:focus,
+#div-nome > input:focus,
+#div-confirmacao-senha > input:focus {
     outline: none;
 }
 
@@ -166,7 +180,10 @@ i.fa-eye {
     display: none;
 }
 
-#div-senha > i.fa-eye, #div-senha > i.fa-eye-slash {
+#div-senha > i.fa-eye,
+#div-senha > i.fa-eye-slash,
+#div-confirmacao-senha > i.fa-eye,
+#div-confirmacao-senha > i.fa-eye-slash {
     transition: all .2s linear;
     font-size: 20px;
     cursor: pointer;
@@ -200,12 +217,18 @@ input::placeholder {
     color: var(--dark-50);
 }
 
-#esqueci-senha:hover {
-    text-decoration: underline;
-    transform: scale(1);
+#esqueci-senha {
+    width: fit-content;
 }
 
-#container-senha, #container-email {
+#esqueci-senha:hover {
+    text-decoration: underline;
+}
+
+#container-senha,
+#container-email, 
+#container-nome,
+#container-confirmacao-senha {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -215,11 +238,17 @@ input::placeholder {
 .erro > div#div-email > i.fa-envelope,
 .erro > div#div-senha > i.fa-key,
 .erro > div#div-senha > i.fa-eye,
-.erro > div#div-senha > i.fa-eye-slash {
+.erro > div#div-senha > i.fa-eye-slash,
+.erro > div#div-confirmacao-senha > i.fa-eye,
+.erro > div#div-confirmacao-senha > i.fa-eye-slash,
+.erro > div#div-nome > i.fa-user {
     color: var(--red-100);
 }
 
-div.erro > div#div-email, div.erro > div#div-senha {
+div.erro > div#div-email, 
+div.erro > div#div-senha,
+div.erro > div#div-nome,
+div.erro > div#div-confirmacao-senha {
     border-color: var(--red-100);
 }
 
@@ -243,6 +272,19 @@ small {
     transform: translateY(-2px);
 }
 
+button {
+    transition: all .2s linear;
+    background-color: transparent;
+    border: none;
+    font-size: medium;
+    color: var(--dark-50);
+}
+
+button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -262,6 +304,6 @@ a {
     transition: all .2s linear;
 }
 
-a:hover {
+footer a:hover {
     transform: scale(1.1);
 }

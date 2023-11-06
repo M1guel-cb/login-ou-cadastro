@@ -19,28 +19,35 @@
                     <i class="fa-solid fa-moon"></i>
                 </label>
             </header>
-            <form method="get">
-                <div id="container-email">
-                    <label for="email">Email</label>
-                    <div id="div-email">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="text" id="email" placeholder="Digite seu email de login" autocomplete="email">
+                <form method="get">
+                    <div id="container-email">
+                        <label for="email">Email</label>
+                        <div id="div-email">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="text" id="email" placeholder="Digite seu email de login" autocomplete="email">
+                        </div>
+                        <div class="msg-erro">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <small>Email inválido!</small>
+                        </div>
                     </div>
-                    <div class="msg-erro"><i class="fa-solid fa-circle-exclamation"></i> <small>Email inválido!</small></div>
-                </div>
-                <div id="container-senha">
-                    <label for="senha">Senha</label>
-                    <div id="div-senha">
-                        <i class="fa-solid fa-key"></i>
-                        <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
-                        <i class="fa-solid fa-eye-slash" id="olho-fechado" onclick="verSenha('text')"></i>
-                        <i class="fa-solid fa-eye" id="olho-aberto" onclick="verSenha('password')"></i>
+                    <div id="container-senha">
+                        <label for="senha">Senha</label>
+                        <div id="div-senha">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
+                            <i class="fa-solid fa-eye-slash" id="olho-fechado" onclick="verSenha('text')"></i>
+                            <i class="fa-solid fa-eye" id="olho-aberto" onclick="verSenha('password')"></i>
+                        </div>
+                        <div class="msg-erro">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <small>erro</small>
+                        </div>
+                        <a href="#" id="esqueci-senha">Esqueci a senha</a>
                     </div>
-                    <div class="msg-erro"><i class="fa-solid fa-circle-exclamation"></i> <small>erro</small></div>
-                    <a href="#" id="esqueci-senha">Esqueci a senha</a>
-                </div>
-                <input type="submit" value="Entrar" onclick="validar()">
-            </form method="get">
+                    <input type="submit" value="Entrar">
+                </form method="get">
+                <a href="cadastro.html"><button>Não tem conta? Crie uma!</button></a>
             <footer>
                 <a href="https://www.instagram.com/m1guel.cb" rel="external" target="_blank">
                     <div>
