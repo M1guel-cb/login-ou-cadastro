@@ -1,16 +1,26 @@
 const btn = document.querySelector('#btn');
 const bola = document.querySelector('#bola');
+
 const olhoSenha = document.querySelector('div#div-senha #olho-aberto');
 const olhoFechadoSenha = document.querySelector('div#div-senha #olho-fechado');
 const olhoConfirmacaoSenha = document.querySelector('div#div-confirmacao-senha #olho-aberto');
 const olhoFechadoConfirmacaoSenha = document.querySelector('div#div-confirmacao-senha #olho-fechado');
+
 const enviar = document.querySelector('button[type = "submit"]');
+const criar = document.querySelector("input[value='Criar']");
+
 const email = document.querySelector("#email");
+const nome = document.querySelector("#nome");
 const senha = document.querySelector('#senha');
-const confirmarSenha = document.querySelector('#confirmacao-senha');
-const erroSenha = document.querySelector('#container-senha > div.msg-erro > small');
+const confirmacaoSenha = document.querySelector('#confirmacao-senha');
+
+const contNome = document.querySelector("#container-nome");
 const contEmail = document.querySelector("#container-email");
 const contSenha = document.querySelector("#container-senha");
+const contConfirmacaoSenha = document.querySelector("#container-confirmacao-senha");
+
+const erroSenha = document.querySelector('#container-senha > div.msg-erro > small');
+
 let tema_sitema = localStorage.getItem('theme') || 'light';
 let erro = "";
 var minusc = /[a-z]/; 
@@ -41,11 +51,11 @@ function verConfirmacaoSenha(tipo) {
     if (tipo == 'text') {
         olhoConfirmacaoSenha.style.display = 'block';
         olhoFechadoConfirmacaoSenha.style.display = 'none';
-        confirmarSenha.type = tipo
+        confirmacaoSenha.type = tipo
     } else if (tipo == 'password') {
         olhoConfirmacaoSenha.style.display = 'none';
         olhoFechadoConfirmacaoSenha.style.display = 'block';
-        confirmarSenha.type = tipo
+        confirmacaoSenha.type = tipo
     }
 }
 
@@ -55,6 +65,14 @@ function temaAtual(theme) {
         bola.style.transform = 'translateX(28px)';
     } else {
         bola.style.transform = 'translateX(0)';
+    }
+}
+
+function validarNome() {
+    if (contNome) {
+        if (nome.value == '') {
+            return false
+        }
     }
 }
 
@@ -89,45 +107,68 @@ function validarSenha() {
     
 }
 
-function addRotate() {
-    enviar.innerHTML = '<i class="fa-solid fa-rotate"></i>'
+function confirmarSenhas() {
+    if (confirmacaoSenha) {
+        if (senha.value != confirmacaoSenha.value) {
+            return false
+        }
+    }
 }
 
-function removeRotate() {
-    enviar.innerHTML = 'Entrar'
-}
-
-enviar.addEventListener('click', (e) => {
-    e.preventDefault();
+if (enviar){
+    enviar.addEventListener('click', (e) => {
+        e.preventDefault();
     
-    if (validarEmail() == false) {
-        contEmail.classList.add('erro');
-        return
-    } else {
-        contEmail.classList.remove('erro')
-    }
+        if (validarEmail() == false) {
+           contEmail.classList.add('erro');
+           return
+        } else {
+            contEmail.classList.remove('erro')
+        }
     
-    if (validarSenha() == false) {
-        erroSenha.innerHTML = erro;
-        contSenha.classList.add('erro');
-        return
-    } else {
-        contSenha.classList.remove('erro')
-    }
-
-    addRotate()
-    
-    fetch('https://api.sheetmonkey.io/form/7DurBkacSX5ViHpWvUmAP9', {
-        method: 'post',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            email: email.value,
-            senha: senha.value,
-        })
-    }).then(() => removeRotate());
+        if (validarSenha() == false) {
+            erroSenha.innerHTML = erro;
+            contSenha.classList.add('erro');
+            return
+        } else {
+            contSenha.classList.remove('erro')
+        }
 });
+}
+
+if (criar) {
+    criar.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (validarNome() == false) {
+            contNome.classList.add('erro');
+            return
+        } else {
+            contNome.classList.remove('erro')
+        }
+        
+        if (validarEmail() == false) {
+            contEmail.classList.add('erro');
+            return
+        } else {
+            contEmail.classList.remove('erro')
+        }
+        
+        if (validarSenha() == false) {
+            erroSenha.innerHTML = erro;
+            contSenha.classList.add('erro');
+            return
+        } else {
+            contSenha.classList.remove('erro')
+        }
+
+        if (confirmarSenhas() == false) {
+            contConfirmacaoSenha.classList.add('erro');
+            return
+        } else {
+            contConfirmacaoSenha.classList.remove('erro')
+        }
+    })
+}
 
 temaAtual(tema_sitema)
